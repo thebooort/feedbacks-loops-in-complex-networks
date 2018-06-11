@@ -5,6 +5,13 @@ Created on Mon Jun 11 13:52:00 2018
 
 @author: from stackexhange
 """
+from networkx import Graph, DiGraph, simple_cycles
+
+#here it will be our dictionary
+dictionary_we_have_created={}
+
+#first function counts feedback loops
+
 def dfs(graph, start, end):
     fringe = [(start, [])]
     while fringe:
@@ -17,7 +24,11 @@ def dfs(graph, start, end):
                 continue
             fringe.append((next_state, path+[next_state]))
 
-graph = { 1: [2, 3, 5], 2: [1], 3: [1], 4: [2], 5: [2] }
-cycles = [[node]+path  for node in graph for path in dfs(graph, node, node)]
+
+cycles = [[node]+path  for node in dictionary_we_have_created for path in dfs(dictionary_we_have_created, node, node)]
 print(len(cycles)) #feedback loops
 
+# this one counts all loops
+
+DG = DiGraph(dictionary_we_have_created)
+print(len(list(simple_cycles(DG))))
