@@ -26,6 +26,7 @@ gamma= 0.967  #experimental result in twitter
 
 
 prediction=[]
+
 for i in range(2,10):
     prediction.append(F(i,gamma))
     
