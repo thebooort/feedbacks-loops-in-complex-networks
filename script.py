@@ -36,6 +36,8 @@ for i in range(2,10):
 
 fig = plt.figure()
 ax = fig.add_subplot(1, 1, 1)
+ax.set_xlabel(r'$k$')
+ax.set_ylabel(r'$F(k)$')
 ax.set_yscale('log')
 plt.plot([2,3,4,5,6,7,8,9],prediction, '--r', marker="o", markersize=7,label="Prediction")
 plt.legend()
