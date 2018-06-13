@@ -47,7 +47,7 @@ def csv2dict(filename, delimiter=";"):
 
 
 # Test the function
-dictionary = csv2dict("sevaseviene2network.csv", delimiter=";")
+dictionary = csv2dict("Definitiva.csv", delimiter=";")
 
 for key in dictionary:
     print("{0}:".format(key))

@@ -10,7 +10,8 @@ import networkx as nx
 from collections import defaultdict
 import csv
 
-
+# Define functions
+# ========================================
 def simple_cycles_undirected(G, maxlength=float('inf')):
     # TODO: Update docs!
     """Find simple cycles (elementary circuits) of a undirected graph.
@@ -188,23 +189,70 @@ def csv2dict(filename, delimiter=";"):
 
     return dictionary
 
+"""
+OJITO definitiva contiene un sample mucho mas grande de una red de twitter
+mi ordenador no tira no con ella, por eso está comentada
 
+"""
+
+# Load data
+# ========================================
 # Get the information from both files
 dictionary1 = csv2dict("sevaseviene2network.csv", delimiter=";")
-dictionary2 = csv2dict("Definitiva.csv", delimiter=";")
-
+#dictionary2 = csv2dict("Definitiva.csv", delimiter=";")
 
 # These function transform the dictionary to a directed graph networkx-style
 DG1 = DiGraph(dictionary1)
-DG2 = DiGraph(dictionary2)
+#DG2 = DiGraph(dictionary2)
 
+# These function transform the dictionary to an undirected graph networkx-style
+undirected1 = DG1.to_undirected()
+#undirected2 = DG2.to_undirected()
+
+
+# Count cycles
+# ==============================
 # These functions counts all the feedback cycles in our graph
-feedback_cycle_list_DG1=(list(simple_cycles(DG1)))
-#cycle_list_DG2=(list(simple_cycles(DG2)))
+feedback_cycle_list_DG1 = (list(simple_cycles(DG1)))
+#cycle_list_DG2 = (list(simple_cycles(DG2)))
 
-# Finally this part should get all loops via networkx function
-DG1_undirected = nx.compose(DG1, DG1.reverse(copy=True)).to_undirected()
-cycle_list_DG1=(list(simple_cycles_undirected(DG1_undirected, maxlength=10)))
 
-savecycles("sevaseviene_cycles.dat", cycle_list_DG1)
+# Finally this part should gets all loops via networkx function
+cycle_list_DG1 = simple_cycles_undirected(undirected1, maxlength=10)
+
+
+# Save cycles to file
+# ========================================
+# Save directed cycles
+savecycles("sevaseviene_directedcycles.dat", feedback_cycle_list_DG1)
+# Save undirected cycles
+savecycles("sevaseviene_undirectedcycles.dat", cycle_list_DG1)
+
+
+# Play with the data
+# ========================================
+print(len(feedback_cycle_list_DG1))
+#print(len(cycle_list_DG1))
+
+# feedback_number[i]=number of cycle with i+1 longitude
+feedback_number = [0,0,0,0,0,0,0,0,0,0] 
+
+#counting feedback numbers 
+for i in range(0,len(feedback_cycle_list_DG1)):
+    if len(list(feedback_cycle_list_DG1[i])) == 1:
+        feedback_number[0]+=1
+    elif len(list(feedback_cycle_list_DG1[i]))==2:
+        feedback_number[1]+=1
+    elif len(list(feedback_cycle_list_DG1[i]))==3:
+        feedback_number[2]+=1
+    elif len(list(feedback_cycle_list_DG1[i]))==4:
+        feedback_number[3]+=1
+    elif len(list(feedback_cycle_list_DG1[i]))==5:
+        feedback_number[4]+=1
+    elif len(list(feedback_cycle_list_DG1[i]))==6:
+        feedback_number[5]+=1
+    elif len(list(feedback_cycle_list_DG1[i]))==7:
+        feedback_number[6]+=1
+print(feedback_number)
+
 
