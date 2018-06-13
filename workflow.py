@@ -28,6 +28,9 @@ def simple_cycles_undirected(G, maxlength=float('inf')):
     This is a nonrecursive, iterator/generator version of Johnson's
     algorithm [1]_.  There may be better algorithms for some cases [2]_ [3]_.
 
+    Note: this functions counts loops of size bigger than 2 twice, one 
+    for each direction.
+
     Parameters
     ----------
     G : NetworkX Graph
