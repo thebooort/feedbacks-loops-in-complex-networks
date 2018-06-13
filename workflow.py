@@ -47,20 +47,25 @@ def csv2dict(filename, delimiter=";"):
 
     return dictionary
 
+"""
+OJITO definitiva contiene un sample mucho mas grande de una red de twitter
+mi ordenador no tira no con ella, por eso está comentada
+
+"""
 
 # Get the information from both files
 dictionary1 = csv2dict("sevaseviene2network.csv", delimiter=";")
-dictionary2 = csv2dict("Definitiva.csv", delimiter=";")
+#dictionary2 = csv2dict("Definitiva.csv", delimiter=";")
 
 # These function transform the dictionary to a directed graph networkx-style
 
 DG1 = DiGraph(dictionary1)
-DG2 = DiGraph(dictionary2)
+#DG2 = DiGraph(dictionary2)
 
 # These function transform the dictionary to an undirected graph networkx-style
 
 undirected1=Graph(DG1)
-undirected2=Graph(DG2)
+#undirected2=Graph(DG2)
 
 # These functions counts all the feedback cycles in our graph
 
@@ -76,6 +81,25 @@ print(len(feedback_cycle_list_DG1))
 print(len(cycle_list_DG1))
 
 
+feedback_number=[0,0,0,0,0,0,0,0,0,0] # feedback_number[i]=number of cycle with i+1 longitude
+
+#counting feedback numbers 
+for i in range(0,len(feedback_cycle_list_DG1)):
+    if len(list(feedback_cycle_list_DG1[i]))==1:
+        feedback_number[0]+=1
+    elif len(list(feedback_cycle_list_DG1[i]))==2:
+        feedback_number[1]+=1
+    elif len(list(feedback_cycle_list_DG1[i]))==3:
+        feedback_number[2]+=1
+    elif len(list(feedback_cycle_list_DG1[i]))==4:
+        feedback_number[3]+=1
+    elif len(list(feedback_cycle_list_DG1[i]))==5:
+        feedback_number[4]+=1
+    elif len(list(feedback_cycle_list_DG1[i]))==6:
+        feedback_number[5]+=1
+    elif len(list(feedback_cycle_list_DG1[i]))==7:
+        feedback_number[6]+=1
+print(feedback_number)
 
 
 
