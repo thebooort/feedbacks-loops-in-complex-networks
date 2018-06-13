@@ -57,6 +57,11 @@ dictionary2 = csv2dict("Definitiva.csv", delimiter=";")
 DG1 = DiGraph(dictionary1)
 DG2 = DiGraph(dictionary2)
 
+# These function transform the dictionary to an undirected graph networkx-style
+
+undirected1=Graph(DG1)
+undirected2=Graph(DG2)
+
 # These functions counts all the feedback cycles in our graph
 
 feedback_cycle_list_DG1=(list(simple_cycles(DG1)))
@@ -64,11 +69,12 @@ feedback_cycle_list_DG1=(list(simple_cycles(DG1)))
 
 # Finally this part should gets all loops via networkx function
 
-cycle_list_DG1=(list(cycle_basis(DG1)))
+cycle_list_DG1=(list(cycle_basis(undirected1)))
 #cycle_list_DG2=(list(simple_cycles(DG2)))
 
-len(feedback_cycle_list_DG1)
-len(cycle_list_DG1)
+print(len(feedback_cycle_list_DG1))
+print(len(cycle_list_DG1))
+
 
 
 
