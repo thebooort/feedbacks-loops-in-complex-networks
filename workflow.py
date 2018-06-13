@@ -12,6 +12,11 @@ import csv
 
 # Define functions
 # ========================================
+""" This functions has been modified from the function simple_cycles
+    in networkx package, which is distributed under a BSD license.
+        networkx github page: https://github.com/networkx/
+
+"""
 def simple_cycles_undirected(G, maxlength=float('inf')):
     # TODO: Update docs!
     """Find simple cycles (elementary circuits) of a undirected graph.
