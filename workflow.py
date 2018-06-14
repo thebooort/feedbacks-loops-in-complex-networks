@@ -99,7 +99,8 @@ def simple_cycles_undirected(G, maxlength=float('inf')):
     # Also we save the actual graph so we can mutate it. We only take the
     # edges because we do not want to copy edge and node attributes here.
     # Create a symemtric directed graph from the given undirected one
-    subG = type(G.to_directed())(G.edges())
+    G_dir = G.to_directed()
+    subG = type(G_dir)(G_dir.edges())
     sccs = list(nx.strongly_connected_components(subG))
     while sccs:
         scc = sccs.pop()
