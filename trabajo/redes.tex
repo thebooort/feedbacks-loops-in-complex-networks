@@ -5,14 +5,45 @@
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{amsmath}
+\usepackage{listings}
 \usepackage{graphicx}
 \usepackage{amsfonts}
+\usepackage[toc,page]{appendix}
 \usepackage{amssymb}
 \newtheorem{thm}{Teorema}
 \newtheorem{lem}[thm]{Lema}
 \newdefinition{rmk}{Remark}
 \newproof{pf}{Demostración}
 \newproof{pot}{Demostración del Teorema \ref{thm2}}
+ 
+ \usepackage{listings}
+ \usepackage{color}
+ 
+ \definecolor{codegreen}{rgb}{0,0.6,0}
+ \definecolor{codegray}{rgb}{0.5,0.5,0.5}
+ \definecolor{codepurple}{rgb}{0.58,0,0.82}
+ \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+ \lstdefinestyle{mystyle}{
+ 	backgroundcolor=\color{backcolour},   
+ 	commentstyle=\color{codegreen},
+ 	keywordstyle=\color{magenta},
+ 	numberstyle=\tiny\color{white},
+ 	stringstyle=\color{codepurple},
+ 	basicstyle=\footnotesize,
+ 	breakatwhitespace=false,         
+ 	breaklines=true,                 
+ 	captionpos=b,                    
+ 	keepspaces=true,                 
+ 	numbers=left,                    
+ 	numbersep=5pt,                  
+ 	showspaces=false,                
+ 	showstringspaces=false,
+ 	showtabs=false,                  
+ 	tabsize=2
+ }
+ 
+ \lstset{style=mystyle}
 %%\bibliographystyle{IEEEannot}
 
 %% `Elsevier LaTeX' style
@@ -60,8 +91,7 @@ Para continuar vamos a dar una pequeñas nociones sobre los elementos fundamenta
 	
 	Como bien se apunta en \cite{arti}, la existencia de esta direccionalidad está relacionada con la existencia de una estructura jerárquica dentro de nuestra red. Así, aunque la aplicación de los resultados es muy amplia, podemos relacionarlo directamente con la temática de redes tróficas que vimos en clase. 
 	\item \textbf{Ciclo retroalimentado o feedback loop}: hablamos de ciclo retroalimentado de orden $k$ dentro de un grafo direccional, cuando nos referimos una sucesión cerrada de $k$ nodos (esto es, con el mismo nodo en primera y última posición), cuyo orden de aparición viene determinado por el camino que indica el sentido de las aristas que los conectan.
-	\item \textbf{jerarquía} Hablamos de jerarquía en un grafo cuando 
-	\item \textbf{ascents}
+
 \end{itemize}
 
 Debido al gran impacto de la existencia de feedback loops en la estabilidad dinámica del sistema, el artículo se centra en encontrar una herramienta predictiva para conocer, basándose en un solo parámetro $\gamma$, la fracción de ciclos de orden $k$ que también son ciclos retroalimentados. Se observa experimentalmente que esta fracción siempre es menor en redes con direccionalidad inherente que en redes aleatorizadas.
@@ -135,10 +165,11 @@ Aunque esta operación afecta claramente a la cantidad de enlaces, las conclusio
 
 \section{Intento de reproducción}
 \spacing{1.5}
+Desde el principio nos atrajo la cantidad de aplicaciones que la investigación podía tener, por eso decidimos coger este articulo para el trabajo. Durante su lectura acordamos que la mejor manera de intentar comprenderlo era la reproducción parcial de los resultados y, con tal fin, pensamos que, debíamos escoger alguna red a la que tuvieramos fácil acceso.
 
-Escribir.
+Pasó por nuestra cabeza la posibilidad de fijarnos en las redes tecnológicas que se exponían al final, pues contenían detalles interesantes como hemos descrito antes.
 
-En particular nos centramos en la reproducción de redes en Twitter. En este caso estaríamos ante una predicción como la que se observa en la gráfica \ref{h2}.
+En particular, nos centramos en la reproducción de redes en Twitter. En este caso estaríamos ante una predicción como la que se observa en la gráfica \ref{h2}.
 \begin{figure}
 	\centering
 	\includegraphics[width=9cm]{graf_4.png}
@@ -146,10 +177,57 @@ En particular nos centramos en la reproducción de redes en Twitter. En este cas
 	\label{h2}
 \end{figure}
 
+
+Por tanto, escogimos esta red social y, basándonos en la base de datos expuesta en el material complementario de \cite{arti}, nos pusimos a probar.
+
+Lamentablemente, el volumen de datos echaba por tierra cualquier intento por nuestra parte, debido a la poca potencia de nuestros ordenadores. 
+
+Estando en esta situación, decidimos que la mejor manera de sobreponernos era obtener nuestra propia fuente de datos, de una de nuestras redes (más pequeña que la usada en el estudio) de Twitter.
+
+Para ello usamos el paquete \textit{Tweepy} el cual nos ofrece la posibilidad de conectarnos a la API de twitter para la obtención de nuestro grafo de seguidores. Hemos de destacar que las restricciones de petición de usuarios a la aplicación hicieron que nos retrasásemos, pues nuestro dataset tardó días en estar completo.
+
+Una vez completo el dataset, analizamos la información mediante el paquete  \textit{NetworkX}:
+\begin{itemize}
+	\item En primer lugar analizamos  los ciclos de en nuestra red. Para ello utilizamos una version no-recursiva de iterador/generador del algoritmo de Johnson, implementada por nosotros basada en la librería de NetworkX, definida como :
+\end{itemize}
+
+	\begin{lstlisting}[language=Python]
+	def simple_cycles_undirected(G, maxlength=float('inf'))\end{lstlisting}
+Aquí nos volvimos a topar con la velocidad de ejecución. Aun siendo el algoritmo elegido bastante bueno en cuanto a complejidad y tiemp ode ejecucion, nuestros ordenadores no eran lo suficientemente rápidos lo que nos hizo perder mucho tiempo en obtener resultados.
+\begin{itemize}
+	\item Luego utilizamos otra función implementada en la librería de NetworkX para el conteo de ciclos de retroalimentacion en grafos dirigido, definida como :
+\end{itemize}
+
+
+\begin{lstlisting}[language=Python]
+feedback_cycle_list_DG1 = (list(simple_cycles(DG1)))\end{lstlisting}
+ 
+con todo ello, disponíamos de información suficiente para hacer una comparativa:
+
+
+
+Como extra, puede consultar nuestro workflow en el apéndice.
+
+
+
 \section{Conclusiones finales}
 \spacing{1.5}
+aaa
+
+
+
 \section*{Referencias}
 \spacing{1.5}
 \bibliography{bibliograf}
+
+\begin{appendices}
+	
+	\section{Workflow de conversion y resultados}
+	\lstinputlisting[language=Python]{workflow.py}
+\section{Obtención de datos en twitter}
+\lstinputlisting[language=Python]{follow.py}
+\end{appendices}
+
+
 
 \end{document}

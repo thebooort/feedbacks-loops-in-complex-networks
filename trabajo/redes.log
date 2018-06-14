@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.24)  11 JUN 2018 19:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.24)  14 JUN 2018 19:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -642,6 +642,31 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
 LaTeX Info: Redefining \[ on input line 2735.
 LaTeX Info: Redefining \] on input line 2736.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count129
+\lst@gtempboxa=\box33
+\lst@token=\toks27
+\lst@length=\count130
+\lst@currlwidth=\dimen136
+\lst@column=\count131
+\lst@pos=\count132
+\lst@lostspace=\dimen137
+\lst@width=\dimen138
+\lst@newlines=\count133
+\lst@lineno=\count134
+\lst@maxwidth=\dimen139
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count135
+\lst@skipnumbers=\count136
+\lst@framebox=\box34
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
@@ -649,14 +674,28 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count137
+\c@@ppsavesec=\count138
+\c@@ppsaveapp=\count139
+)
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
-\c@thm=\count129
-\c@rmk=\count130
-\c@pf=\count131
-\c@pot=\count132
+\c@thm=\count140
+\c@rmk=\count141
+\c@pf=\count142
+\c@pot=\count143
 
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/01/03 v1.1b Standard LaTeX Color (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 143.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 ) (./redes.aux
@@ -665,34 +704,34 @@ LaTeX Info: Redefining \% on input line 25.
 )
 \openout1 = `redes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count133
-\scratchdimen=\dimen136
-\scratchbox=\box33
-\nofMPsegments=\count134
-\nofMParguments=\count135
-\everyMPshowfont=\toks27
-\MPscratchCnt=\count136
-\MPscratchDim=\dimen137
-\MPnumerator=\count137
-\makeMPintoPDFobject=\count138
-\everyMPtoPDFconversion=\toks28
+\scratchcounter=\count144
+\scratchdimen=\dimen140
+\scratchbox=\box35
+\nofMPsegments=\count145
+\nofMParguments=\count146
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count147
+\MPscratchDim=\dimen141
+\MPnumerator=\count148
+\makeMPintoPDFobject=\count149
+\everyMPtoPDFconversion=\toks29
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -744,119 +783,315 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box34
-Package hyperref Info: Link coloring OFF on input line 22.
+\AtBeginShipoutBox=\box36
+Package hyperref Info: Link coloring OFF on input line 53.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count139
+\c@section@level=\count150
 )
-LaTeX Info: Redefining \ref on input line 22.
-LaTeX Info: Redefining \pageref on input line 22.
-LaTeX Info: Redefining \nameref on input line 22.
+LaTeX Info: Redefining \ref on input line 53.
+LaTeX Info: Redefining \pageref on input line 53.
+LaTeX Info: Redefining \nameref on input line 53.
 
-(./redes.out) (./redes.out)
+(./redes.out) (./redes.out
+! Undefined control sequence.
+<argument> Ap\unhbox \voidb 
+                            @x \bgroup \let \unhbox \voidb @x \setbox \@temp...
+l.8 ...ph1}{Workflow de conversion y resultados}{}
+                                                  % 8
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> ...oidb @x \bgroup \let \unhbox \voidb 
+                                                  @x \setbox \@tempboxa \hbo...
+l.8 ...ph1}{Workflow de conversion y resultados}{}
+                                                  % 8
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.8 ...ph1}{Workflow de conversion y resultados}{}
+                                                  % 8
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+! Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.8 ...ph1}{Workflow de conversion y resultados}{}
+                                                  % 8
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \B_Ap 
+l.8 ...ph1}{Workflow de conversion y resultados}{}
+                                                  % 8
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing { inserted.
+<to be read again> 
+                   \unhbox 
+l.8 ...ph1}{Workflow de conversion y resultados}{}
+                                                  % 8
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Undefined control sequence.
+<argument> Ap\unhbox \voidb 
+                            @x \bgroup \let \unhbox \voidb @x \setbox \@temp...
+l.8 ...ph1}{Workflow de conversion y resultados}{}
+                                                  % 8
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> ...oidb @x \bgroup \let \unhbox \voidb 
+                                                  @x \setbox \@tempboxa \hbo...
+l.8 ...ph1}{Workflow de conversion y resultados}{}
+                                                  % 8
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> Obtenci\3
+                    63n de datos en twitter
+l.9 ....Alph2}{Obtenci\363n de datos en twitter}{}
+                                                  % 9
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> Ap\unhbox \voidb 
+                            @x \bgroup \let \unhbox \voidb @x \setbox \@temp...
+l.9 ....Alph2}{Obtenci\363n de datos en twitter}{}
+                                                  % 9
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> ...oidb @x \bgroup \let \unhbox \voidb 
+                                                  @x \setbox \@tempboxa \hbo...
+l.9 ....Alph2}{Obtenci\363n de datos en twitter}{}
+                                                  % 9
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.9 ....Alph2}{Obtenci\363n de datos en twitter}{}
+                                                  % 9
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+! Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.9 ....Alph2}{Obtenci\363n de datos en twitter}{}
+                                                  % 9
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+! Undefined control sequence.
+<argument> Ap\unhbox \voidb 
+                            @x \bgroup \let \unhbox \voidb @x \setbox \@temp...
+l.9 ....Alph2}{Obtenci\363n de datos en twitter}{}
+                                                  % 9
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> ...oidb @x \bgroup \let \unhbox \voidb 
+                                                  @x \setbox \@tempboxa \hbo...
+l.9 ....Alph2}{Obtenci\363n de datos en twitter}{}
+                                                  % 9
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+)
+Runaway text?
+\unhbox @x \bgroup \let \unhbox @x \setbox \spacefactor \@m {}tempbox\ETC.
+! File ended while scanning text of \B_Ap.
+<inserted text> 
+                }
+l.53 \begin{document}
+                     
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
 \@outlinefile=\write4
 \openout4 = `redes.out'.
 
-LaTeX Info: Redefining \. on input line 22.
-LaTeX Info: Redefining \% on input line 22.
-LaTeX Font Info:    Try loading font information for U+msa on input line 42.
-
+LaTeX Info: Redefining \. on input line 53.
+LaTeX Info: Redefining \% on input line 53.
+\c@lstlisting=\count151
+LaTeX Font Info:    Try loading font information for U+msa on input line 73.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 42.
+LaTeX Font Info:    Try loading font information for U+msb on input line 73.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-<graf_1.png, id=52, 394.47375pt x 281.05pt>
+<graf_1.png, id=60, 394.47375pt x 281.05pt>
 File: graf_1.png Graphic file (type png)
  <use graf_1.png>
-Package pdftex.def Info: graf_1.png used on input line 95.
+Package pdftex.def Info: graf_1.png used on input line 125.
 (pdftex.def)             Requested size: 341.43306pt x 243.25928pt.
  [3]
-<graf_2.png, id=64, 925.4575pt x 575.14874pt>
+<graf_2.png, id=72, 925.4575pt x 575.14874pt>
 File: graf_2.png Graphic file (type png)
  <use graf_2.png>
-Package pdftex.def Info: graf_2.png used on input line 117.
+Package pdftex.def Info: graf_2.png used on input line 147.
 (pdftex.def)             Requested size: 426.79134pt x 265.23862pt.
 
-Overfull \hbox (42.79134pt too wide) in paragraph at lines 117--118
+Overfull \hbox (42.79134pt too wide) in paragraph at lines 147--148
  [][] 
  []
 
-[4 <./graf_1.png>] <graf_3.png, id=74, 569.12625pt x 349.305pt>
+[4 <./graf_1.png>] <graf_3.png, id=82, 569.12625pt x 349.305pt>
 File: graf_3.png Graphic file (type png)
 
 <use graf_3.png>
-Package pdftex.def Info: graf_3.png used on input line 131.
+Package pdftex.def Info: graf_3.png used on input line 161.
 (pdftex.def)             Requested size: 426.79134pt x 261.95677pt.
 
-Overfull \hbox (42.79134pt too wide) in paragraph at lines 131--132
+Overfull \hbox (42.79134pt too wide) in paragraph at lines 161--162
  [][] 
  []
 
-<graf_4.png, id=76, 402.50375pt x 269.005pt>
+[5 <./graf_2.png>] [6 <./graf_3.png>]
+<graf_4.png, id=93, 402.50375pt x 269.005pt>
 File: graf_4.png Graphic file (type png)
  <use graf_4.png>
-Package pdftex.def Info: graf_4.png used on input line 144.
+Package pdftex.def Info: graf_4.png used on input line 175.
 (pdftex.def)             Requested size: 256.0748pt x 171.14053pt.
- [5 <./graf_2.png>] [6 <./graf_3.png>] (./redes.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 155.
- [7 <./graf_4.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 155.
+ [7 <./graf_4.png>] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.
+sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+) (./redes.bbl)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 226.
+(./workflow.py
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 1.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1.
+
+[8] [9]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 47.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 47.
+ [10] [11]
+[12] [13] [14]) (./follow.py [15] [16])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 233.
+ [17]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 233.
  (./redes.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 155.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 155.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 233.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 233.
 Package rerunfilecheck Info: File `redes.out' has not changed.
-(rerunfilecheck)             Checksum: 23B6A67F982D7A1CDDCDF5EF232DA855;360.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 155.
+(rerunfilecheck)             Checksum: A3C843F6BE6BA107D87B8C5D86DCDC09;965.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 233.
  )
 (\end occurred inside a group at level 5)
 
-### semi simple group (level 5) entered at line 152 (\begingroup)
-### semi simple group (level 4) entered at line 150 (\begingroup)
-### semi simple group (level 3) entered at line 137 (\begingroup)
-### semi simple group (level 2) entered at line 55 (\begingroup)
-### semi simple group (level 1) entered at line 47 (\begingroup)
+### semi simple group (level 5) entered at line 220 (\begingroup)
+### semi simple group (level 4) entered at line 214 (\begingroup)
+### semi simple group (level 3) entered at line 167 (\begingroup)
+### semi simple group (level 2) entered at line 86 (\begingroup)
+### semi simple group (level 1) entered at line 78 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 8323 strings out of 493029
- 114433 string characters out of 6136233
- 218750 words of memory out of 5000000
- 11712 multiletter control sequences out of 15000+600000
- 11248 words of font info for 43 fonts, out of 8000000 for 9000
+ 10729 strings out of 493029
+ 147569 string characters out of 6136233
+ 475554 words of memory out of 5000000
+ 13740 multiletter control sequences out of 15000+600000
+ 11854 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,6n,30p,616b,688s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on redes.pdf (7 pages, 294342 bytes).
+ 34i,7n,42p,616b,2367s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Ap\\unhbox\040@x\040\\bgroup\040\\l
+et\040\\unhbox\040@x\040\\setbox\040\\spacefactor\040\\@m\040{}tempboxa\040\\hb
+ox\040{e\\global\040\\mathchardef\040\\accent\040@spacefactor\040\\spacefactor\
+040}\\accent\04019\040e\\egroup\040\\spacefactor\040\\accent\040@spacefactor\04
+0\\futurelet\040\\spacefactor\040\\@m\040{}let@token\040ndice.1.Alph1} has been
+ referenced but does not exist, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmtt10.pfb>
+Output written on redes.pdf (17 pages, 372980 bytes).
 PDF statistics:
- 153 PDF objects out of 1000 (max. 8388607)
- 120 compressed objects within 2 object streams
- 20 named destinations out of 1000 (max. 500000)
- 69 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 615 PDF objects out of 1000 (max. 8388607)
+ 565 compressed objects within 6 object streams
+ 360 named destinations out of 1000 (max. 500000)
+ 85 words of extra memory for PDF output out of 10000 (max. 10000000)
 
