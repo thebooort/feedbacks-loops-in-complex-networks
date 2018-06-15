@@ -117,7 +117,7 @@ def simple_cycles_undirected(G, maxlength=float('inf')):
             thisnode, nbrs = stack[-1]
             if nbrs and (len(path) <= maxlength):
                 nextnode = nbrs.pop()
-                if nextnode == startnode:
+                if (nextnode == startnode) and (len(path)>2):
                     yield path[:]
                     closed.update(path)
 #                        print "Found a cycle", path, closed
