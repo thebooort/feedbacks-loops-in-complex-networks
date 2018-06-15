@@ -5,6 +5,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{amsmath}
+\usepackage{todonotes}
 \usepackage{listings}
 \usepackage{graphicx}
 \usepackage{amsfonts}
@@ -67,7 +68,6 @@ This work is a brief revision and study about a paper called: \textbf{Inherent d
 
 \begin{keyword}
  \texttt{complex networks} \sep \texttt{mathematics}\sep \texttt{complexity} \sep \texttt{graph theory}
-
 \end{keyword}
 
 \end{frontmatter}
@@ -84,22 +84,41 @@ Finalmente, para cerrar nuestro trabajo, hablaremos un poco sobre las conclusion
 
 \section{Review del artículo}
 \spacing{1.5}
-El artículo muestra una serie de resultados que relacionan la direccionalidad inherente al sistema complejo (representado mediante grafos) con la ausencia de ciclos que se retroalimenten dentro de este grafo. 
-Para continuar vamos a dar una pequeñas nociones sobre los elementos fundamentales del artículo:
+El artículo muestra una serie de resultados que relacionan la direccionalidad inherente a muchos sistemas complejos empíricos (representados mediante grafos) con la ausencia de ciclos que se retroalimenten (\textit{feedback loops}) dentro de estos grafos. 
+Para empezar vamos a dar una pequeñas nociones sobre los elementos fundamentales del artículo:
 \begin{itemize}
-	\item \textbf{Direccionalidad inherente}: hablamos de direccionalidad inherente a un sistema complejo cuando todos los nodos se pueden ordenar en un eje unidimensional, de tal manera que los enlaces apuntan desde valores bajos a altos de sus coordenadas en dicho eje. 
+	\item \textbf{Direccionalidad inherente}: hablamos de direccionalidad inherente a un sistema complejo cuando, en el grafo que lo representa, todos los nodos se pueden ordenar en un eje unidimensional, de tal manera que los enlaces tienden a apuntar desde valores bajos a altos de sus coordenadas en dicho eje. 
 	
 	Como bien se apunta en \cite{arti}, la existencia de esta direccionalidad está relacionada con la existencia de una estructura jerárquica dentro de nuestra red. Así, aunque la aplicación de los resultados es muy amplia, podemos relacionarlo directamente con la temática de redes tróficas que vimos en clase. 
-	\item \textbf{Ciclo retroalimentado o feedback loop}: hablamos de ciclo retroalimentado de orden $k$ dentro de un grafo direccional, cuando nos referimos una sucesión cerrada de $k$ nodos (esto es, con el mismo nodo en primera y última posición), cuyo orden de aparición viene determinado por el camino que indica el sentido de las aristas que los conectan.
 
+	\item \textbf{Ciclo retroalimentado o feedback loop}: hablamos de ciclo retroalimentado de orden $k$ dentro de un grafo direccional, cuando nos referimos una sucesión cerrada de $k$ nodos (esto es, con el mismo nodo en primera y última posición), cuyo orden de aparición viene determinado por el camino que indica el sentido de las aristas que los conectan.
+        Por el contrario, llamamos \textbf{ciclo estructural} o simplemente ciclo de orden $k$ a un sucesión cerrada de nodos conectados en la que no se considera el sentido de las aristas.
 \end{itemize}
 
-Debido al gran impacto de la existencia de feedback loops en la estabilidad dinámica del sistema, el artículo se centra en encontrar una herramienta predictiva para conocer, basándose en un solo parámetro $\gamma$, la fracción de ciclos de orden $k$ que también son ciclos retroalimentados. Se observa experimentalmente que esta fracción siempre es menor en redes con direccionalidad inherente que en redes aleatorizadas.
+
+    Debido al gran impacto de la existencia de feedback loops en la estabilidad dinámica del sistema, el artículo se centra en encontrar una herramienta predictiva para conocer, basándose en un solo parámetro $\gamma$, la fracción de ciclos de orden $k$ que también son ciclos retroalimentados. Se observa experimentalmente que esta fracción siempre es menor en redes con direccionalidad inherente que en redes aleatorizadas.
+
+    El artículo se divide en tres puntos principales.
+    En primer lugar, se diseña un modelo probabilístico para, bajo ciertas simplificaciones, obtener la probabilidad de que un ciclo de orden $k$ sea reatroalimentado en función de cierto parámetro $\gamma$ que indica la direccionalidad de la red.
+    \todo{explicar más?}
+
+    A continuación se analizan redes empíricas para obtener la fracción de ciclos retroalimentados frente a estructurales en estas.
+    Se observa que esta fracción siempre es menor en redes con direccionalidad inherente que en redes aleatorizadas. 
+    La excepción ocurre en redes socio-tecnológicas como la de los seguidores de Twitter, que analizaremos en datalle más adelante.
+    \todo{¿obviar?}
+    
+    Finalmente, se ajustan los datos experimentales usando dos métodos diferentes.
+    Por una lado se obtiene el valor de $\gamma$ del modelo que mejor ajusta a los datos mediante mínimos cuadrados.
+    \todo{escribir mejor}
+    Luego se ajustan los datos a una curva exponencial y se compara el resultado con la predicción asintótica del modelo, también de forma exponencial.
+
+    El buen ajuste del indican claramente que es la direccionalidad de la red la causante de la ausencia de ciclos retroalimentados.
+
 
 \subsection{Métodos}
-Exponemos ahora la forma de obtener la herramienta predictiva descrita en el artículo.
+    Exponemos ahora la forma de obtener la herramienta predictiva descrita en el artículo.
 
-Consideramos una red de $N$ nodos, y $L$ aristas e imaginamos que conocemos la fracción de ciclos retroalimentados de orden $k$: $F(k)$. Con ello , si asumimos la existencia de direccionalidad, se construye el modelo aleatorizando la direccionalidad de la siguiente manera: 
+    Consideramos una red de $N$ nodos, y $L$ aristas e imaginamos que conocemos la fracción de ciclos retroalimentados de orden $k$: $F(k)$. Con ello , si asumimos la existencia de direccionalidad, se construye el modelo aleatorizando la direccionalidad de la siguiente manera: 
 \begin{itemize}
 	\item Se escoge un nodo. Con probabilidad $0<\gamma<1$ su arista apunta en la dirección inherente, i.e.; hacia los nodos de mayor jerarquía, y con probabilidad $1-\gamma$ apunta en sentido contrario.
 \end{itemize}
@@ -115,7 +134,12 @@ la solución a este problema está dada por los llamados números eulerianos.
 Con este interesante concepto en mente, los autores ya pueden desarrollar la expresión de la función buscada, necesitando ahora añadirle el parametro de direccionalidad:
 $$F(k,\gamma)=\sum_{l=0}^{k}\frac{A(l,k)}{k!}[\gamma^l(1-\gamma)^{k-l}+\gamma^{k-l}(1-\gamma)^l]$$
 Usando los procesos del material suplementario, la expresión puede aproximarse por :
-$$F(k,\gamma)\approx 2exp\{\frac{k}{2}log[\gamma(1-\gamma)]+\frac{k}{24}log^2(\frac{\gamma}{1-\gamma})\}$$
+\begin{equation}
+    \label{eq:F_asymp}
+    F(k,\gamma)
+    \approx 
+    2\exp\left\{\frac{k}{2}\log[\gamma(1-\gamma)]+\frac{k}{24} \log^2(\frac{\gamma}{1-\gamma})\right\}
+\end{equation}
 
 Esta expresión es la que hemos usado para todas las partes replicadas de nuestra revisión.
 Para concluir, presentamos en la gráfica \ref{h}, que también se puede ver en \cite{arti}, la relación entre el parámetro de forma y la fracción $F(k,\gamma)$
@@ -129,7 +153,6 @@ Para concluir, presentamos en la gráfica \ref{h}, que también se puede ver en 
 
 
 
-
 \subsection{Algunos resultados a destacar}
 Entrando en la parte de resultados, queremos destacar algunos de los que nos han parecido más relevantes.
 \begin{itemize}
@@ -137,6 +160,12 @@ Entrando en la parte de resultados, queremos destacar algunos de los que nos han
 	\item El número total de ciclos de retroalimentación también se reduce 
 	con respecto a las aleatorizaciones de red. Sin embargo, y esto es por lo que nos llamó la atención realizarlo en Twitter, estas tendencias no son tan evidentes para las redes socio-tecnológicas; mientras que todas las redes consideradas tienen una fracción más pequeña de bucles de retroalimentación que sus aleatorizaciones de direccionalidad, la red social de Twitter exhibe una mayor $F(k)$ que las aleatorizaciones.
 	\item Por supuesto, el modelo desarrollado reproduce bastante bien las muestras experimentales obtenidas, que muestran un decaimiento exponencial de $F(k)$ conforme aumenta $k$.
+        Esto puede observarse desde de dos formas.
+        Por un lado, las X en el gráfico representan la predición del modelo cuando $\gamma$ ha sido ajusta mediante mínimos cuadrados a los datos.
+        Aquí podemos ver que en la amplia mayoría de los casos hay un muy buen acuerdo entre los valores experimentales y el modelo.
+        Por otro lado, se compara la predicción asintótica del modelo de la ecuación \ref{eq:F_asymp} con una regresión exponencial a los datos.
+        Aquí de nuevo observamos una muy buena coincidencia.
+        
 \end{itemize}
 
 Para observar gráficamente estos resultados podemos irnos a la gráfica \ref{h1}, donde hemos destacado la sección de redes tecnológicas. Antes, sin embargo debemos hacer una reseña sobre la información a encontrar:
@@ -155,7 +184,7 @@ Finalmente queremos resaltar el apartado sobre cómo información sobre nuevos n
 de su predicción, los investigadores simularon el efecto de desconocimiento sobre las redes que ya tenían,
 eliminando una fracción de los enlaces al azar, y repitieron el análisis anterior. 
 
-Aunque esta operación afecta claramente a la cantidad de enlaces, las conclusiones del modelo apenas varían, lo cual nos parece muy interesante. Incluso, cuando la cifra de nodos que se elimina está entre $20-$ y $50-$ podemos observar esta tendencia en la gráfica obtenida del material suplementario \ref{h4}
+Aunque esta operación afecta claramente a la cantidad de enlaces, las conclusiones del modelo apenas varían, lo cual nos parece muy interesante. Incluso, cuando la cifra de nodos que se elimina está entre $20\%$ y $50\%$ podemos observar esta tendencia en la gráfica obtenida del material suplementario \ref{h4}
 \begin{figure}
 	\centering
 	\includegraphics[width=15cm]{graf_3.png}
