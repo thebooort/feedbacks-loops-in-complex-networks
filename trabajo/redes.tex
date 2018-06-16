@@ -63,7 +63,7 @@
 \address{Master en Física y Matemáticas\\ Universidad de Granada\\10/06/2018}
 
 \begin{abstract}
-This work is a brief revision and study about a paper called: \textbf{Inherent directionality explains the lack of feedback loops in empirical networks} written by \textit{Virginia Domínguez García, Simone Pigolotti and Miguel A. Muñoz}  . Our aim is to present its mains results, some technical highlights related to the mathematical and physical advances, and reproduce a minor result using our own methods. It will be analized its implications and future research too. Althought this work is merely a revision it could be useful as a source of code to reproduce some of the results.
+This work is a brief revision and study about a paper called: \textbf{Inherent directionality explains the lack of feedback loops in empirical networks} written by \textit{Virginia Domínguez García, Simone Pigolotti and Miguel A. Muñoz}  . Our aim is to present its mains results, some technical highlights related to the mathematical and physical advances, and reproduce a minor result using our own methods. Its implications and future research will also be analysed. Although this work is merely a revision it could be useful as a source of code to reproduce some of the results.
 \end{abstract}
 
 \begin{keyword}
@@ -78,7 +78,7 @@ This work is a brief revision and study about a paper called: \textbf{Inherent d
 \spacing{1.5}
 El objetivo de este trabajo es presentar el artículo seleccionado \cite{arti}, de manera que expondremos sus principales descubrimientos, así como algunas notas sobre los procedimientos que en él se presentan. 
 
-Tras esto, vamos a realizar un pequeño intento de simulación para intentar reproducir algunos de los resultados que aparecen en el articulo.
+Tras esto, vamos a realizar un pequeño intento de simulación para tratar de reproducir algunos de los resultados que aparecen en el articulo.
 
 Finalmente, para cerrar nuestro trabajo, hablaremos un poco sobre las conclusiones obtenidas de este y sobre posibles vías para avanzar.
 
@@ -101,18 +101,18 @@ Para empezar vamos a dar una pequeñas nociones sobre los elementos fundamentale
 
     El artículo se divide en tres puntos principales.
     En primer lugar, se diseña un modelo probabilístico para, bajo ciertas simplificaciones, obtener la probabilidad de que un ciclo de orden $k$ sea reatroalimentado en función de cierto parámetro $\gamma$ que indica la direccionalidad de la red.
-    \todo{explicar más?}
+    \todo{explicar más? yo lo veo bien (c)}
 
     A continuación se analizan redes empíricas para obtener la fracción de ciclos retroalimentados frente a estructurales en estas.
     Se observa que esta fracción siempre es menor en redes con direccionalidad inherente que en redes aleatorizadas. 
     La excepción ocurre en redes socio-tecnológicas como la de los seguidores de Twitter, que analizaremos en datalle más adelante.
-    \todo{¿obviar?}
+ 
     
     Finalmente, se ajustan los datos experimentales usando dos métodos diferentes.
     Por una lado se obtiene el valor de $\gamma$ del modelo que mejor ajusta a los datos mediante mínimos cuadrados.
     Luego se ajustan los datos a una curva exponencial y se compara el resultado con la predicción asintótica del modelo, también exponencial, usando la $\gamma$ anteior.
 
-    El buen ajuste de los datos experimentales con el modelo indican claramente que es la direccionalidad de la red explica la ausencia de ciclos retroalimentados.
+    El buen ajuste que aparece en el artículo entre la predicción y los datos indica claramente la relación de causalidad entre la direccionalidad de la red y la ausencia de ciclos retroalimentados.
 
 
 \subsection{Métodos}
@@ -167,7 +167,7 @@ Entrando en la parte de resultados, queremos destacar algunos de los que nos han
 	con respecto a las aleatorizaciones de red. Sin embargo, y esto es por lo que nos llamó la atención realizarlo en Twitter, estas tendencias no son tan evidentes para las redes socio-tecnológicas; mientras que todas las redes consideradas tienen una fracción más pequeña de bucles de retroalimentación que sus aleatorizaciones de direccionalidad, la red social de Twitter exhibe una mayor $F(k)$ que las aleatorizaciones.
 	\item Por supuesto, el modelo desarrollado reproduce bastante bien las muestras experimentales obtenidas, que muestran un decaimiento exponencial de $F(k)$ conforme aumenta $k$.
         Esto puede observarse desde de dos formas.
-        Por un lado, las X en el gráfico representan la predición del modelo cuando $\gamma$ ha sido ajusta mediante mínimos cuadrados a los datos.
+        Por un lado, las $X$ en el gráfico representan la predicción del modelo cuando $\gamma$ ha sido ajusta mediante mínimos cuadrados a los datos.
         Aquí podemos ver que en la amplia mayoría de los casos hay un muy buen acuerdo entre los valores experimentales y el modelo.
         Por otro lado, se compara la predicción asintótica del modelo de la ecuación \ref{eq:F_asymp} con una regresión exponencial a los datos.
         Aquí de nuevo observamos una muy buena coincidencia.
@@ -176,7 +176,7 @@ Entrando en la parte de resultados, queremos destacar algunos de los que nos han
 
 Para observar gráficamente estos resultados podemos irnos a la gráfica \ref{h1}, donde hemos destacado la sección de redes tecnológicas. Antes, sin embargo debemos hacer una reseña sobre la información a encontrar:
 
- En la grafica se compara la fracción medida de los ciclos retroalimentados $F(k)$ con dos aleatorizaciones de la misma red. La primera, que llaman aleatorización de la direccionalidad (DR) - conserva las aristas existentes, pero aleatoriza completamente sus direcciones. La segunda, aleatorización de configuración (CR), aleatoriza tanto aristas como direcciones, pero preservando la conectividad de entrada y salida de cada nodo.
+ En la gráfica se compara la fracción medida de los ciclos retroalimentados $F(k)$ con dos aleatorizaciones de la misma red. La primera, que llaman aleatorización de la direccionalidad (DR) - conserva las aristas existentes, pero aleatoriza completamente sus direcciones. La segunda, aleatorización de configuración (CR), aleatoriza tanto aristas como direcciones, pero preservando la conectividad de entrada y salida de cada nodo.
 \begin{figure}
 	\centering
 	\includegraphics[width=15cm]{graf_2.png}
@@ -184,7 +184,7 @@ Para observar gráficamente estos resultados podemos irnos a la gráfica \ref{h1
 	\label{h1}
 \end{figure}
 
-Finalmente queremos resaltar el apartado sobre cómo información sobre nuevos nodos puede alterar lo que sabemos hasta ahora por las predicciones.
+Finalmente queremos resaltar el apartado sobre cómo disponer de información sobre nuevos nodos puede alterar lo que sabemos hasta ahora por las predicciones.
 
  Para probar la robustez
 de su predicción, los investigadores simularon el efecto de desconocimiento sobre las redes que ya tenían,
@@ -200,7 +200,7 @@ Aunque esta operación afecta claramente a la cantidad de enlaces, las conclusio
 
 \section{Intento de reproducción}
 \spacing{1.5}
-Desde el principio nos atrajo la cantidad de aplicaciones que la investigación podía tener, por eso decidimos coger este articulo para el trabajo. Durante su lectura acordamos que la mejor manera de intentar comprenderlo era la reproducción parcial de los resultados y, con tal fin, pensamos que, debíamos escoger alguna red a la que tuvieramos fácil acceso.
+Desde el principio nos atrajo la cantidad de aplicaciones que la investigación podía tener, por eso decidimos coger este artículo para el trabajo. Durante su lectura acordamos que la mejor manera de intentar comprenderlo era la reproducción parcial de los resultados y, con tal fin, pensamos que debíamos escoger alguna red a la que tuviéramos fácil acceso.
 
 Pasó por nuestra cabeza la posibilidad de fijarnos en las redes tecnológicas que se exponían al final, pues contenían detalles interesantes como hemos descrito antes.
 
@@ -219,18 +219,18 @@ Lamentablemente, el volumen de datos echaba por tierra cualquier intento por nue
 
 Estando en esta situación, decidimos que la mejor manera de sobreponernos era obtener nuestra propia fuente de datos, de una de nuestras redes (más pequeña que la usada en el estudio) de Twitter.
 
-Para ello usamos el paquete \textit{Tweepy} el cual nos ofrece la posibilidad de conectarnos a la API de twitter para la obtención de nuestro grafo de seguidores. Hemos de destacar que las restricciones de petición de usuarios a la aplicación hicieron que nos retrasásemos, pues nuestro dataset tardó días en estar completo.
+Para ello usamos el paquete \textit{Tweepy}, el cual nos ofrece la posibilidad de conectarnos a la API de twitter para la obtención de nuestro grafo de seguidores. Hemos de destacar que las restricciones de petición de usuarios a la aplicación hicieron que nos retrasásemos, pues nuestro dataset tardó días en estar completo.
 
 Una vez completo el dataset, analizamos la información mediante el paquete  \textit{NetworkX}:
 \begin{itemize}
-	\item En primer lugar analizamos  los ciclos de en nuestra red. Para ello utilizamos una version no-recursiva de iterador/generador del algoritmo de Johnson, implementada por nosotros basada en la librería de NetworkX, definida como :
+	\item En primer lugar, analizamos  los ciclos de nuestra red. Para ello utilizamos una version no-recursiva de iterador/generador del algoritmo de Johnson, implementada por nosotros basada en la librería de NetworkX, definida como :
 \end{itemize}
 
 	\begin{lstlisting}[language=Python]
 	def simple_cycles_undirected(G, maxlength=float('inf'))\end{lstlisting}
-Aquí nos volvimos a topar con la velocidad de ejecución. Aun siendo el algoritmo elegido bastante bueno en cuanto a complejidad y tiemp ode ejecucion, nuestros ordenadores no eran lo suficientemente rápidos lo que nos hizo perder mucho tiempo en obtener resultados.
+Aquí nos volvimos a topar con la velocidad de ejecución. Aun siendo el algoritmo elegido bastante bueno en cuanto a complejidad y tiempo de ejecución, nuestros ordenadores no eran lo suficientemente rápidos lo que nos hizo perder mucho tiempo en obtener resultados.
 \begin{itemize}
-	\item Luego utilizamos otra función implementada en la librería de NetworkX para el conteo de ciclos de retroalimentacion en grafos dirigido, definida como :
+	\item Luego utilizamos otra función implementada en la librería de NetworkX para el conteo de ciclos de retroalimentación en grafos dirigidos, definida como :
 \end{itemize}
 
 
