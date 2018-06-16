@@ -84,7 +84,7 @@ Finalmente, para cerrar nuestro trabajo, hablaremos un poco sobre las conclusion
 
 \section{Review del artículo}
 \spacing{1.5}
-El artículo muestra una serie de resultados que relacionan la direccionalidad inherente a muchos sistemas complejos empíricos (representados mediante grafos) con la ausencia de ciclos que se retroalimenten (\textit{feedback loops}) dentro de estos grafos. 
+El artículo muestra una serie de resultados que relacionan la direccionalidad inherente a muchos sistemas complejos empíricos (representados mediante grafos) con la ausencia de ciclos que se retroalimenten (\textit{feedback loops}) dentro de estos. 
 Para empezar vamos a dar una pequeñas nociones sobre los elementos fundamentales del artículo:
 \begin{itemize}
 	\item \textbf{Direccionalidad inherente}: hablamos de direccionalidad inherente a un sistema complejo cuando, en el grafo que lo representa, todos los nodos se pueden ordenar en un eje unidimensional, de tal manera que los enlaces tienden a apuntar desde valores bajos a altos de sus coordenadas en dicho eje. 
@@ -96,7 +96,8 @@ Para empezar vamos a dar una pequeñas nociones sobre los elementos fundamentale
 \end{itemize}
 
 
-    Debido al gran impacto de la existencia de feedback loops en la estabilidad dinámica del sistema, el artículo se centra en encontrar una herramienta predictiva para conocer, basándose en un solo parámetro $\gamma$, la fracción de ciclos de orden $k$ que también son ciclos retroalimentados. Se observa experimentalmente que esta fracción siempre es menor en redes con direccionalidad inherente que en redes aleatorizadas.
+    Debido al gran impacto de la existencia de feedback loops en la estabilidad dinámica del sistema, el artículo se centra en encontrar una herramienta predictiva para conocer  la fracción de ciclos para cada orden $k$ que también son ciclos retroalimentados, bajo la suposición de que existe direccionalidad en la red caracterizada por un solo parámetro $\gamma$. 
+    Se observa, tanto experimentalmente como con la herramienta anterior, que esta fracción siempre es menor en redes con direccionalidad inherente que en redes aleatorizadas.
 
     El artículo se divide en tres puntos principales.
     En primer lugar, se diseña un modelo probabilístico para, bajo ciertas simplificaciones, obtener la probabilidad de que un ciclo de orden $k$ sea reatroalimentado en función de cierto parámetro $\gamma$ que indica la direccionalidad de la red.
@@ -109,10 +110,9 @@ Para empezar vamos a dar una pequeñas nociones sobre los elementos fundamentale
     
     Finalmente, se ajustan los datos experimentales usando dos métodos diferentes.
     Por una lado se obtiene el valor de $\gamma$ del modelo que mejor ajusta a los datos mediante mínimos cuadrados.
-    \todo{escribir mejor}
-    Luego se ajustan los datos a una curva exponencial y se compara el resultado con la predicción asintótica del modelo, también de forma exponencial.
+    Luego se ajustan los datos a una curva exponencial y se compara el resultado con la predicción asintótica del modelo, también exponencial, usando la $\gamma$ anteior.
 
-    El buen ajuste del indican claramente que es la direccionalidad de la red la causante de la ausencia de ciclos retroalimentados.
+    El buen ajuste de los datos experimentales con el modelo indican claramente que es la direccionalidad de la red explica la ausencia de ciclos retroalimentados.
 
 
 \subsection{Métodos}
@@ -132,8 +132,14 @@ la solución a este problema está dada por los llamados números eulerianos.
 
  Sin embargo, como los ciclos que buscamos, al ser retroalimentados, están cerrados, se  generaliza el concepto de números de Euler para el caso periódico o cíclico. Es decir, necesitamos contar el número de ascensos en un ciclo cerrado genérico, lo que en el articulo se bautiza como los \textbf{numeros eulerianos cíclicos}, denotados por $A(l,k)$.
 Con este interesante concepto en mente, los autores ya pueden desarrollar la expresión de la función buscada, necesitando ahora añadirle el parametro de direccionalidad:
-$$F(k,\gamma)=\sum_{l=0}^{k}\frac{A(l,k)}{k!}[\gamma^l(1-\gamma)^{k-l}+\gamma^{k-l}(1-\gamma)^l]$$
-Usando los procesos del material suplementario, la expresión puede aproximarse por :
+$$
+F(k,\gamma)=\sum_{l=0}^{k}\frac{A(l,k)}{k!}[\gamma^l(1-\gamma)^{k-l}+\gamma^{k-l}(1-\gamma)^l]
+.
+$$
+Aquí se multiplica el número de permutaciones con $l$ ascensos, $A(l,k)$, por su probalidad de ocurrencia, que aparece en el corchete.
+Esta se obtiene trivialmente a partir de $\gamma$ que corresponde a la probabilidad de ascenso. Finalmente, se divide el resultado por el número total de permutaciones $k!$ para obtener la fracción de ciclos retroalimentados.
+
+Usando los procesos del material suplementario, esta expresión puede aproximarse por :
 \begin{equation}
     \label{eq:F_asymp}
     F(k,\gamma)
@@ -141,7 +147,7 @@ Usando los procesos del material suplementario, la expresión puede aproximarse 
     2\exp\left\{\frac{k}{2}\log[\gamma(1-\gamma)]+\frac{k}{24} \log^2(\frac{\gamma}{1-\gamma})\right\}
 \end{equation}
 
-Esta expresión es la que hemos usado para todas las partes replicadas de nuestra revisión.
+Esta expresión es la que hemos usado para todas las partes replicadas de nuestra revisión. \todo{seguro?}
 Para concluir, presentamos en la gráfica \ref{h}, que también se puede ver en \cite{arti}, la relación entre el parámetro de forma y la fracción $F(k,\gamma)$
 
 \begin{figure}
