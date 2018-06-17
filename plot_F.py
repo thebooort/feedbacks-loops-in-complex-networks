@@ -10,6 +10,7 @@ from matplotlib import pyplot as plt
 gamma_article = 0.967
 kmax = 10  # Maximum cycle order
 kmin_reg = 3
+kmax_reg = 5
 n_randomizations = 5
 
 # Load data
@@ -44,22 +45,33 @@ F_exp = nk_directed.astype(float)/nk_undirected
 F_rand = nk_directed_rand.astype(float)/nk_undirected
 
 # Find least squares estimation for gamma
-obj_fun = lambda gamma, ks: F(ks[kmin_reg:], gamma) - F_exp[kmin_reg:]
+obj_fun = lambda gamma, ks: (
+        F_exact(ks[kmin_reg:kmax_reg], gamma) - F_exp[kmin_reg:kmax_reg])
 sol = spo.least_squares(obj_fun, 0.9, bounds=(0, 1), args=(ks,))
 gamma_ls = sol.x
+print("Least squares estimation for gamma is {0}".format(gamma_ls))
 
 
 # Plot 
-fig, ax = plt.subplots(figsize=(3*1.61, 3))
+fig, ax = plt.subplots(figsize=(3.5*1.61, 3.5))
 ax.set_xlabel("k")
 ax.set_ylabel("F(k)")
+ax.set_xlim((2, kmax))
 
 ax.semilogy(ks, F_exp, "o", label="Data")
-ax.semilogy(ks, F_rand, "o", label="Randomized network")
+ax.semilogy(ks, F_rand, "s", label="Randomization")
+
+ax.semilogy(
+        ks, F_exact(ks, gamma_ls), "+", label=r"$F(k, \gamma_{\mathrm{LS}})$")
+ax.semilogy(
+        ks, F(ks, gamma_ls), label=r"$F_{\mathrm{asym}}(k, \gamma_{\mathrm{LS}})$")
+
+ax.semilogy(
+        ks, F_exact(ks, gamma_article), "x",
+        label=r"$F(k, \gamma_{\mathrm{article}})$")
 ax.semilogy(
         ks, F(ks, gamma_article),
-        label=r"$F(k, \gamma_{\mathrm{article}})$ asymp.")
-ax.semilogy(ks, F(ks, gamma_ls), label=r"$F(k, \gamma_{\mathrm{LS}})$ asymp.")
+        label=r"$F_{\mathrm{asym}}(k, \gamma_{\mathrm{article}})$")
 
 ax.legend()
 fig.tight_layout()

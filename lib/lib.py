@@ -202,3 +202,48 @@ def F(k,gamma):
     """
     return 2*np.exp(k/2*np.log(gamma*(1-gamma))+k/24*(np.log(gamma/(1-gamma)))**2)
 
+
+def cyclic_eulerian_novec(l, k):
+    """Calculate the cyclic Eulerian number of order k for l ascents.
+
+    """
+    # Check if the result have been memoized
+    if (l, k) in cyclic_eulerian_novec.cache:
+        result = cyclic_eulerian_novec.cache[(l, k)]
+    # Else, calculate it
+    else:
+        if (l == 0) or (l >= k):
+            result = 0
+        else:
+            result = (float(k*(k - l))/(k - 1)*cyclic_eulerian(l - 1, k - 1) 
+                    + float(l*k)/(k - 1)*cyclic_eulerian(l, k - 1))
+            
+            # Store the result in the cache
+            cyclic_eulerian_novec.cache[(l, k)] = result
+
+    return result
+
+cyclic_eulerian_novec.cache = {(0, 1) : 1}
+
+cyclic_eulerian = np.vectorize(cyclic_eulerian_novec)
+
+def F_exact_novec(k, gamma):
+    """Calculate exact value of the fraction of feedback loops.
+
+    Note: this function is not vectorized.
+
+    The model described in the article is used.
+
+    """
+    suma = 0
+    for l in range(int(k) + 1):
+        suma += float(cyclic_eulerian(l, k))/np.math.factorial(k)*(
+                np.power(gamma, l)*np.power(1 - gamma, k - l)
+                + np.power(gamma, k - l)*np.power(1 - gamma, l))
+
+    return suma
+
+# Vectorize function
+F_exact = np.vectorize(F_exact_novec)
+
+      
