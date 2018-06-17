@@ -12,7 +12,7 @@ import csv
 
 # Define functions
 # ========================================
-""" This functions has been modified from the function simple_cycles
+""" This functions have been modified from the function simple_cycles
     in networkx package, which is distributed under a BSD license.
         networkx github page: https://github.com/networkx/
 
@@ -196,7 +196,7 @@ def csv2dict(filename, delimiter=";"):
 
 """
 OJITO definitiva contiene un sample mucho mas grande de una red de twitter
-mi ordenador no tira no con ella, por eso esta comentada
+mi ordenador no tira con ella, por eso esta comentada
 
 """
 
@@ -206,23 +206,23 @@ mi ordenador no tira no con ella, por eso esta comentada
 dictionary1 = csv2dict("sevaseviene2network.csv", delimiter=";")
 #dictionary2 = csv2dict("Definitiva.csv", delimiter=";")
 
-# These function transform the dictionary to a directed graph networkx-style
+# This function transforms the dictionary to a directed graph networkx-style
 DG1 = DiGraph(dictionary1)
 #DG2 = DiGraph(dictionary2)
 
-# These function transform the dictionary to an undirected graph networkx-style
+# This function transforms the dictionary to an undirected graph networkx-style
 undirected1 = DG1.to_undirected()
 #undirected2 = DG2.to_undirected()
 
 
 # Count cycles
 # ==============================
-# These functions counts all the feedback cycles in our graph
+# This function counts all the feedback cycles in our graph
 feedback_cycle_list_DG1 = (list(simple_cycles(DG1)))
 #cycle_list_DG2 = (list(simple_cycles(DG2)))
 
 
-# Finally this part should gets all loops via networkx function
+# Finally this part should get all loops via networkx function
 cycle_list_DG1 = simple_cycles_undirected(undirected1, maxlength=10)
 
 

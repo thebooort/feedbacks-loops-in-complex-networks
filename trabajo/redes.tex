@@ -96,7 +96,7 @@ Para empezar vamos a dar una pequeñas nociones sobre los elementos fundamentale
 \end{itemize}
 
 
-    Debido al gran impacto de la existencia de feedback loops en la estabilidad dinámica del sistema, el artículo se centra en encontrar una herramienta predictiva para conocer  la fracción de ciclos para cada orden $k$ que también son ciclos retroalimentados, bajo la suposición de que existe direccionalidad en la red caracterizada por un solo parámetro $\gamma$. 
+    Debido al gran impacto de la existencia de feedback loops en la estabilidad dinámica del sistema, el artículo se centra en encontrar una herramienta predictiva para conocer  la fracción de ciclos para cada orden $k$ que también son ciclos retroalimentados, bajo el supuesto de que existe direccionalidad en la red caracterizada por un solo parámetro $\gamma$. 
     %Se observa, tanto experimentalmente como con la herramienta anterior, que esta fracción siempre es menor en redes con direccionalidad inherente que en redes aleatorizadas.
 
     El artículo se divide en tres puntos principales.
@@ -117,21 +117,21 @@ Para empezar vamos a dar una pequeñas nociones sobre los elementos fundamentale
 \subsection{Métodos}
     Exponemos ahora la forma de obtener la herramienta predictiva descrita en el artículo.
 
-    Consideramos una red de $N$ nodos, y $L$ aristas
+    Consideramos una red de $N$ nodos, y $L$ aristas.
     %e imaginamos que conocemos la fracción de ciclos retroalimentados de orden $k$: $F(k)$
-    . 
-    Asumimos que existe direccionalidad en esta red y la construimos aleatorizando la direccionalidad de la siguiente manera.
-    Para cada arista, con probabilidad $0<\gamma<1$ hacemos apuntar esta en la dirección inherente, i.e. hacia los nodos de mayor jerarquía, y con probabilidad $1-\gamma$ apunta en sentido contrario.
-    Al parámetro $\gamma$ se le llamaremos \textbf{parámetro de direccionalidad.}
+     
+    Asumimos que existe direccionalidad en esta red y la construimos aleatorizando la direccionalidad de la siguiente manera:
+    para cada arista, con probabilidad $0<\gamma<1$ hacemos apuntar ésta en la dirección inherente, i.e.; hacia los nodos de mayor jerarquía, y con probabilidad $1-\gamma$ apunta en sentido contrario.
+    Al parámetro $\gamma$ le llamaremos \textbf{parámetro de direccionalidad.}
 
     Dada esta red aleatoria, nos preguntamos, dado un valor de $\gamma$, cuál es la probabilidad de que un ciclo de orden $k$ se además retroalimentado. 
     Denotaremos esta probabilidad por $F(k, \gamma)$.
 
-    Para ello, empezamos etiquetando con una notación jerárquica para los nodos de este ciclo. 
+    Para ello, empezamos etiquetando con una notación jerárquica los nodos de este ciclo. 
     Existirán un total de $k!$ posibles ciclos estructurales, tantos como permutaciones de las etiquetas. 
-    Para obtener la probabilidad buscada, hemos de encontrar de todos los ciclos anteriores, cuántos son retroalimentados.
+    Para obtener la probabilidad buscada hemos de encontrar, de todos los ciclos anteriores, cuántos son retroalimentados.
     En general, la probabilidad de obtener un ciclo retroalimentado a partir de un ciclo cualquiera dependerá del número de ascensos $A(l,k)$.
-    Este numero cuenta cuántas permutaciones de la secuencia básica de longitud $k$ con $\textrm{nodo}_{i} < \textrm{nodo}_{i+1}$ se tienen para $l$ valores distintos de $i$. Para una secuencia no periódica, es decir, sin establecer ninguna relación entre el primer y último nodo, la solución a este problema está dada por los llamados \textbf{números eulerianos}.
+    Este número cuenta cuántas permutaciones de la secuencia básica de longitud $k$ con $\textrm{nodo}_{i} < \textrm{nodo}_{i+1}$ se tienen para $l$ valores distintos de $i$. Para una secuencia no periódica, es decir, sin establecer ninguna relación entre el primer y último nodo, la solución a este problema está dada por los llamados \textbf{números eulerianos}.
 
     Sin embargo, como los ciclos que buscamos, al ser retroalimentados, están cerrados, se  generaliza el concepto de números de Euler para el caso periódico o cíclico.
     Es decir, necesitamos contar el número de ascensos en un ciclo cerrado genérico, lo que en el articulo se bautiza como los \textbf{numeros eulerianos cíclicos}, denotados por $A(l,k)$.
@@ -142,9 +142,9 @@ Con este interesante concepto en mente, los autores ya pueden desarrollar la exp
     .
     \end{equation}
 Aquí se multiplica el número de permutaciones con $l$ ascensos, $A(l,k)$, por su probalidad de ocurrencia, que aparece en el corchete.
-Esta se obtiene trivialmente a partir de $\gamma$ que corresponde a la probabilidad de ascenso. Finalmente, se divide el resultado por el número total de permutaciones $k!$ para obtener la fracción de ciclos retroalimentados.
+Ésta se obtiene trivialmente a partir de $\gamma$ que corresponde a la probabilidad de ascenso. Finalmente, se divide el resultado por el número total de permutaciones $k!$ para obtener la fracción de ciclos retroalimentados.
 
-Usando los procesos del material suplementario, esta expresión puede aproximarse, enel caso de $k$ grande y $\gamma$ no muy pequeño, por:
+Usando los procesos del material suplementario, esta expresión puede aproximarse, en el caso de $k$ grande y $\gamma$ no muy pequeño, por:
 \begin{equation}
     \label{eq:F_asymp}
     F(k,\gamma)
@@ -153,10 +153,10 @@ Usando los procesos del material suplementario, esta expresión puede aproximars
 \end{equation}
 
     Este proceso nos permite obtener una expresión teórica con la que comparar los datos experimentales, con los que se ajusta además muy bien.
-    Sin embargo, no hay que perder de vista que en la obtención de la ecuación~\ref{eq:F_exact} se ha hecho una simplifación importante: cada ciclo se ha considerado de forma completamente independiente. 
-    Se han obviado posibles relaciones entre ciclos o diferencias entre estos a diferentes alturas de la estructura jerárquica.
+    Sin embargo, no hay que perder de vista que en la obtención de la ecuación~\ref{eq:F_exact} se ha hecho una simplifación importante: cada ciclo se ha considerado de forma completamente independiente;
+    se han obviado posibles relaciones entre ciclos o diferencias entre éstos a diferentes alturas de la estructura jerárquica.
     En el análisis del artículo esto no supone ningún problema, lo que justifica como válidas las aproximaciones anteriores.
-    Sin embargo, en nuestro intento de reproducción si jugarán un papel muy importante.
+    Sin embargo, en nuestro intento de reproducción sí jugarán un papel muy importante.
 
 %Esta expresión es la que hemos usado para todas las partes replicadas de nuestra revisión. \todo{seguro?}
     Para concluir, presentamos en la gráfica \ref{h}, que también se puede ver en \cite{arti}, la relación entre el parámetro de forma $\gamma$ y la fracción $F(k,\gamma)$.
@@ -177,7 +177,7 @@ Entrando en la parte de resultados, queremos destacar algunos de los que nos han
 	\item El número total de ciclos de retroalimentación también se reduce 
 	con respecto a las aleatorizaciones de red. Sin embargo, y esto es por lo que nos llamó la atención realizarlo en Twitter, estas tendencias no son tan evidentes para las redes socio-tecnológicas; mientras que todas las redes consideradas tienen una fracción más pequeña de bucles de retroalimentación que sus aleatorizaciones de direccionalidad, la red social de Twitter exhibe una mayor $F(k)$ que las aleatorizaciones.
 	\item Por supuesto, el modelo desarrollado reproduce bastante bien las muestras experimentales obtenidas, que muestran un decaimiento exponencial de $F(k)$ conforme aumenta $k$.
-        Esto puede observarse desde de dos formas.
+        Esto puede observarse desde dos perspectivas.
         Por un lado, las $X$ en el gráfico representan la predicción del modelo cuando $\gamma$ ha sido ajusta mediante mínimos cuadrados a los datos.
         Aquí podemos ver que en la amplia mayoría de los casos hay un muy buen acuerdo entre los valores experimentales y el modelo.
         Por otro lado, se compara la predicción asintótica del modelo de la ecuación \ref{eq:F_asymp} con una regresión exponencial a los datos.
@@ -185,7 +185,7 @@ Entrando en la parte de resultados, queremos destacar algunos de los que nos han
         
 \end{itemize}
 
-Para observar gráficamente estos resultados podemos irnos a la gráfica \ref{h1}, donde hemos destacado la sección de redes tecnológicas. Antes, sin embargo debemos hacer una reseña sobre la información a encontrar:
+Para observar gráficamente estos resultados podemos irnos a la gráfica \ref{h1}, donde hemos destacado la sección de redes tecnológicas. Antes, no obstante, debemos hacer una reseña sobre la información a encontrar:
 
  En la gráfica se compara la fracción medida de los ciclos retroalimentados $F(k)$ con dos aleatorizaciones de la misma red. La primera, que llaman aleatorización de la direccionalidad (DR) - conserva las aristas existentes, pero aleatoriza completamente sus direcciones. La segunda, aleatorización de configuración (CR), aleatoriza tanto aristas como direcciones, pero preservando la conectividad de entrada y salida de cada nodo.
 \begin{figure}
@@ -201,7 +201,7 @@ Finalmente queremos resaltar el apartado sobre cómo disponer de información so
 de su predicción, los investigadores simularon el efecto de desconocimiento sobre las redes que ya tenían,
 eliminando una fracción de los enlaces al azar, y repitieron el análisis anterior. 
 
-Aunque esta operación afecta claramente a la cantidad de enlaces, las conclusiones del modelo apenas varían, lo cual nos parece muy interesante. Incluso, cuando la cifra de nodos que se elimina está entre $20\%$ y $50\%$ podemos observar esta tendencia en la gráfica obtenida del material suplementario \ref{h4}
+Aunque esta operación afecta claramente a la cantidad de enlaces, las conclusiones del modelo apenas varían, lo cual nos parece muy interesante. Incluso cuando la cifra de nodos que se elimina está entre $20\%$ y $50\%$ es posible observar esta tendencia en la gráfica obtenida del material suplementario \ref{h4}
 \begin{figure}
 	\centering
 	\includegraphics[width=15cm]{graf_3.png}
@@ -212,7 +212,7 @@ Aunque esta operación afecta claramente a la cantidad de enlaces, las conclusio
 \section{Intento de reproducción}
 \spacing{1.5}
 
-Desde el principio nos atrajo la cantidad de aplicaciones que la investigación podía tener, por eso decidimos coger este artículo para el trabajo. Durante su lectura acordamos que la mejor manera de intentar comprenderlo era la reproducción parcial de los resultados y, con tal fin, pensamos que debíamos escoger alguna red a la que tuviéramos fácil acceso.
+Desde el principio nos atrajo la cantidad de aplicaciones que la investigación podía tener, por eso decidimos escoger este artículo para el trabajo. Durante su lectura acordamos que la mejor manera de intentar comprenderlo era la reproducción parcial de los resultados y, con tal fin, pensamos que debíamos escoger alguna red a la que tuviéramos fácil acceso.
 
 Pasó por nuestra cabeza la posibilidad de fijarnos en las redes tecnológicas que se exponían al final, pues contenían detalles interesantes como hemos descrito antes.
 
@@ -229,7 +229,7 @@ En particular, nos centramos en la reproducción de redes en Twitter.
 \subsection{Metodología}
 \spacing{1.5}
     Una vez elegida la red pasamos a su estudio.
-    Este se dividió en dar partes: primero buscamos un conjunto de datos sobre los que trabajar y luego se procedió a su análisis.
+    Éste se dividió en dar partes: primero buscamos un conjunto de datos sobre los que trabajar y luego se procedió a su análisis.
     
     En la primera, inicialmente nos basamos en la base de datos expuesta en el material complementario de \cite{arti}. 
     Lamentablemente, el volumen de los datos echaba por tierra cualquier intento por nuestra parte, debido a la poca capacidad computacional de nuestros ordenadores.
@@ -238,15 +238,15 @@ Estando en esta situación, decidimos que la mejor manera de sobreponernos era o
 
     Para ello usamos el paquete \textit{Tweepy}, el cual nos ofrece la posibilidad de conectarnos a la API de twitter para la obtención de nuestro grafo de seguidores.
     Hemos de destacar que las restricciones de petición de usuarios a la aplicación hicieron que nos retrasásemos, pues nuestro dataset tardó días en estar completo.
-    Este se generó partiendo de la red de seguidores/seguidos de uno de los miembros del grupo y ampliandola con las redes de 50 de sus seguidores, elegidos aleatoriamente.
+    Éste se generó partiendo de la red de seguidores/seguidos de uno de los miembros del grupo y ampliándola con las redes de 50 de sus seguidores, elegidos aleatoriamente.
     Con este proceso, obtuvimos un grafo dirigido con 40375 nodos y 41480 aristas.
 
     Una vez completo el dataset, pasamos a analizar la información mediante el paquete \textit{NetworkX}:
-	 En primer lugar, obtenemos los ciclos estructurales de nuestra red. Para ello utilizamos una version no-recursiva de iterador/generador del algoritmo de Johnson, implementada por nosotros basada en la librería de NetworkX, definida como:
+	 En primer lugar, obtuvimos los ciclos estructurales de nuestra red. Para ello utilizamos una versión no-recursiva de iterador/generador del algoritmo de Johnson, implementada por nosotros basada en la librería de NetworkX, definida como:
 \begin{lstlisting}[language=Python]
     def simple_cycles_undirected(G, maxlength=float('inf'))
 \end{lstlisting}
-    Este algoritmo parte de nodo y viaja la red usando una búsqueda en profundidad (\textit{Depth First Search}) para hallar ciclos. Esta búsqueda termina cuando se recorre toda la región accesible desde el nodo de partida o se alcanza una profundidad máxima especificada, tras lo que se repite el proceso con otro nodo hasta utilizarlos todos.
+    Este algoritmo parte de un nodo y viaja la red usando una búsqueda en profundidad (\textit{Depth First Search}) para hallar ciclos. Esta búsqueda termina cuando se recorre toda la región accesible desde el nodo de partida o se alcanza una profundidad máxima especificada, tras lo que se repite el proceso con otro nodo hasta utilizarlos todos.
 
     Aquí nos volvimos a topar con la velocidad de ejecución.
     Aun siendo el algoritmo elegido bastante bueno en cuanto a complejidad y tiempo de ejecución, nuestros ordenadores no eran lo suficientemente rápidos lo que nos hizo perder mucho tiempo en obtener resultados.
@@ -272,9 +272,9 @@ Estando en esta situación, decidimos que la mejor manera de sobreponernos era o
 \end{figure}
 
     Los resultados obtenidos según el proceso anterior se muestran en la figura~\ref{fig:sevaseviene_F}.
-    En esta se muestran los valores experimentales obtenidos de $F(k)$ para nuestra rede Twitter. 
+    En ésta se muestran los valores experimentales obtenidos de $F(k)$ para nuestra red de Twitter. 
     Podemos ver que, al igual que en el artículo, nuestra red presenta una $F(k)$ mayor al caso aleatorizado, en contraste con lo que ocurre en redes ecológicas y biológicas. 
-    El valor de $F(k)$ para la aleatorización corresponde al método DR es el resultado de promediar sobre 1000 aleatoriazaciones.
+    El valor de $F(k)$ para la aleatorización corresponde al método DR y es el resultado de promediar sobre 1000 aleatoriazaciones.
 
     Sin embargo, al contrario que en el artículo, ajustando $\gamma$ al modelo mediante mínimos cuadrados obtenemos $\gamma_{LS} \simeq 0.50$, que coincide muy mal con los datos.
     Esto implica que la distribución de ciclos de nuestra red no puede ser explicada mediante el modelo propuesto.
@@ -289,16 +289,16 @@ Estando en esta situación, decidimos que la mejor manera de sobreponernos era o
 \end{figure}
 
     Estos resultados puede explicarse por nuestra muestra de la red de Twitter.
-    Al haber sido generada a partir de la red de un usuario, esta se muestra completamente sesgada a este.
+    Al haber sido generada a partir de la red de un usuario, esta se muestra completamente sesgada a éste.
     Esto puede observarse claramente en la figura~\ref{fig:sevaseviene_network}, en la que están representados los nodos de nuestra red con orden de salida y de entrada mayor que cero, es decir, aquellos que pueden contribuir a ciclos.
     
     Debido a este sesgo, la mayoría de ciclos contienen a este usuario: 228745 sobre 229062 en el caso de ciclos estructurales y 1052 sobre 1110 en el caso de los retroalimentados.
-    Esta circunstancia viola claramente la suposición del modelo de que los ciclos sean independientes, lo que justifica el poco acierto de este en nuestros datos.
+    Esta circunstancia incumple claramente la suposición del modelo de que los ciclos sean independientes, lo que justifica el poco acierto del modelo en nuestra reproducción.
 
     A pesar de esto, la coincidencia de la pendiente para $k$ grande al usar la forma asintótica de $F(k, \gamma)$ con $\gamma_{\textrm{article}}$ parece indicar que, aunque de forma más compleja, la direccionalidad de la red sigue estando presente.
 
     Por otra parte, podemos intentar explicar la abundancia de ciclos con respecto a la red aleatorizada, presente tanto en nuestros datos como en el artículo.
-    En Twitter, además de una clara direccionalidad desde hacia los usuarios más famosos, similar a lo que ocurre en redes tróficas, existe un gran número de conexiones bidireccionales entre usurios a un mismo nivel. Estas relaciones, que no existen de forma tan marcada en redes biológicas, serían las causantes del aumento de $F(k)$.
+    En Twitter, además de una clara direccionalidad hacia los usuarios más famosos, similar a lo que ocurre en redes tróficas, existe un gran número de conexiones bidireccionales entre usuarios a un mismo nivel. Estas relaciones, que no existen de forma tan marcada en redes biológicas, serían las causantes del aumento de $F(k)$.
 
 
 \section{Conclusiones finales}
@@ -308,7 +308,7 @@ Estando en esta situación, decidimos que la mejor manera de sobreponernos era o
     En primer lugar, nos ha llamado la atención la gran necesidad de potencia computacional para resolver el problema. 
     Conceptos aparentemente sencillos como los de ciclos estructurales o dirigidos se convierten en problemas tremendamente costosos a nivel computacional, que hacen irrealizables el análisis de redes relativamente grandes.
 
-    Por otra parte hemos visto que la red de Twitter, desde un punto de vista local, no satisface el modelo propuesto del artículo. Sin embargo, la coincidencia de las pendientes en el gráfico de $F(k)$ indicar que la direccionalidad de la red también es observable desde esta perspectiva, sólo que requeriría de correciones para tener en cuenta la no independencia de los diferentes ciclos.o
+    Por otra parte hemos visto que la red de Twitter, desde un punto de vista local, no satisface el modelo propuesto del artículo. Sin embargo, la coincidencia de las pendientes en el gráfico de $F(k)$ parece indicar que la direccionalidad de la red también es observable desde esta perspectiva, sólo que requeriría de correciones para tener en cuenta la no independencia de los diferentes ciclos.
 
     Finalmente, una dirección interesante en la que avanzar sería el estudio de la red de Twitter analizando de forma conjunta tanto su carácter direccional como la asortatividad en las conexiones recíprocas.
 
@@ -318,7 +318,7 @@ Estando en esta situación, decidimos que la mejor manera de sobreponernos era o
 
 \begin{appendices}
 	
-	\section{Workflow de conversion y resultados}
+	\section{Workflow de conversión y resultados}
 	\lstinputlisting[language=Python]{../workflow.py}
 \pagebreak
 \section{Obtención de datos en twitter}
