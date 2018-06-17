@@ -29,25 +29,25 @@ i=2
 prediction=[]
 for gamma in range(1,10):
     prediction.append(F(i,gamma/10))
-plt.plot([0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8],prediction, '--r', marker="o", markersize=7,label="k=2")
+plt.plot([0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9],prediction, '--r', marker="o", markersize=7,label="k=2")
 
 i=3
 prediction=[]
 for gamma in range(1,10):
     prediction.append(F(i,gamma/10))
-plt.plot([0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8],prediction, '--b', marker="o", markersize=7,label="k=3")
+plt.plot([0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9],prediction, '--b', marker="o", markersize=7,label="k=3")
 
 i=4
 prediction=[]
 for gamma in range(1,10):
     prediction.append(F(i,gamma/10))
-plt.plot([0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8],prediction, '--g', marker="o", markersize=7,label="k=4")
+plt.plot([0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9],prediction, '--g', marker="o", markersize=7,label="k=4")
 
 i=5
 prediction=[]
 for gamma in range(1,10):
     prediction.append(F(i,gamma/10))
-plt.plot([0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8],prediction, '--y', marker="o", markersize=7,label="k=5")    
+plt.plot([0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9],prediction, '--y', marker="o", markersize=7,label="k=5")    
     
 #plotting    
 
