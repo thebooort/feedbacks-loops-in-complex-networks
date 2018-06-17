@@ -104,12 +104,12 @@ Para empezar vamos a dar una pequeñas nociones sobre los elementos fundamentale
 
     A continuación se analizan redes empíricas para obtener la fracción de ciclos retroalimentados frente a estructurales en estas.
     Se observa que esta fracción siempre es menor en redes con direccionalidad inherente que en redes aleatorizadas. 
-    La excepción ocurre en redes socio-tecnológicas como la de los seguidores de Twitter, que analizaremos en datalle más adelante.
+    La excepción ocurre en redes socio-tecnológicas como la de los seguidores de Twitter, que analizaremos en detalle más adelante.
  
     
     Finalmente, se ajustan los datos experimentales usando dos métodos diferentes.
     Por una lado se obtiene el valor de $\gamma$ del modelo que mejor ajusta a los datos mediante mínimos cuadrados.
-    Luego se ajustan los datos a una curva exponencial y se compara el resultado con la predicción asintótica del modelo, también exponencial, usando la $\gamma$ anteior.
+    Luego se ajustan los datos a una curva exponencial y se compara el resultado con la predicción asintótica del modelo, también exponencial, usando la $\gamma$ anterior.
 
     El buen ajuste que aparece en el artículo entre la predicción y los datos indica claramente la relación de causalidad entre la direccionalidad de la red y la ausencia de ciclos retroalimentados.
 
@@ -120,8 +120,8 @@ Para empezar vamos a dar una pequeñas nociones sobre los elementos fundamentale
     Consideramos una red de $N$ nodos, y $L$ aristas.
     %e imaginamos que conocemos la fracción de ciclos retroalimentados de orden $k$: $F(k)$
      
-    Asumimos que existe direccionalidad en esta red y la construimos aleatorizando la direccionalidad de la siguiente manera:
-    para cada arista, con probabilidad $0<\gamma<1$ hacemos apuntar ésta en la dirección inherente, i.e.; hacia los nodos de mayor jerarquía, y con probabilidad $1-\gamma$ apunta en sentido contrario.
+    Asumimos que existe direccionalidad en esta red y la construimos aleatorizando el sentido de las aristas de la siguiente manera:
+    para cada arista, con probabilidad $0<\gamma<1$ hacemos apuntar ésta en la dirección inherente, i.e.; hacia los nodos de mayor jerarquía, y con probabilidad $1-\gamma$ hacia el sentido contrario.
     Al parámetro $\gamma$ le llamaremos \textbf{parámetro de direccionalidad.}
 
     Dada esta red aleatoria, nos preguntamos, dado un valor de $\gamma$, cuál es la probabilidad de que un ciclo de orden $k$ se además retroalimentado. 
@@ -134,14 +134,14 @@ Para empezar vamos a dar una pequeñas nociones sobre los elementos fundamentale
     Este número cuenta cuántas permutaciones de la secuencia básica de longitud $k$ con $\textrm{nodo}_{i} < \textrm{nodo}_{i+1}$ se tienen para $l$ valores distintos de $i$. Para una secuencia no periódica, es decir, sin establecer ninguna relación entre el primer y último nodo, la solución a este problema está dada por los llamados \textbf{números eulerianos}.
 
     Sin embargo, como los ciclos que buscamos, al ser retroalimentados, están cerrados, se  generaliza el concepto de números de Euler para el caso periódico o cíclico.
-    Es decir, necesitamos contar el número de ascensos en un ciclo cerrado genérico, lo que en el articulo se bautiza como los \textbf{numeros eulerianos cíclicos}, denotados por $A(l,k)$.
-Con este interesante concepto en mente, los autores ya pueden desarrollar la expresión de la función buscada: %necesitando ahora añadirle el parametro de direccionalidad:
+    Es decir, necesitamos contar el número de ascensos en un ciclo cerrado genérico, lo que en el articulo se bautiza como los \textbf{números eulerianos cíclicos}, denotados por $A(l,k)$.
+Con este interesante concepto en mente, los autores ya pueden desarrollar la expresión de la función buscada: %necesitando ahora añadirle el parámetro de direccionalidad:
     \begin{equation}
     \label{eq:F_exact}
         F(k,\gamma)=\sum_{l=0}^{k}\frac{A(l,k)}{k!}[\gamma^l(1-\gamma)^{k-l}+\gamma^{k-l}(1-\gamma)^l]
     .
     \end{equation}
-Aquí se multiplica el número de permutaciones con $l$ ascensos, $A(l,k)$, por su probalidad de ocurrencia, que aparece en el corchete.
+Aquí se multiplica el número de permutaciones con $l$ ascensos, $A(l,k)$, por su probabilidad de ocurrencia, que aparece en el corchete.
 Ésta se obtiene trivialmente a partir de $\gamma$ que corresponde a la probabilidad de ascenso. Finalmente, se divide el resultado por el número total de permutaciones $k!$ para obtener la fracción de ciclos retroalimentados.
 
 Usando los procesos del material suplementario, esta expresión puede aproximarse, en el caso de $k$ grande y $\gamma$ no muy pequeño, por:
@@ -153,7 +153,7 @@ Usando los procesos del material suplementario, esta expresión puede aproximars
 \end{equation}
 
     Este proceso nos permite obtener una expresión teórica con la que comparar los datos experimentales, con los que se ajusta además muy bien.
-    Sin embargo, no hay que perder de vista que en la obtención de la ecuación~\ref{eq:F_exact} se ha hecho una simplifación importante: cada ciclo se ha considerado de forma completamente independiente;
+    Sin embargo, no hay que perder de vista que en la obtención de la ecuación~\ref{eq:F_exact} se ha hecho una simplificación importante: cada ciclo se ha considerado de forma completamente independiente;
     se han obviado posibles relaciones entre ciclos o diferencias entre éstos a diferentes alturas de la estructura jerárquica.
     En el análisis del artículo esto no supone ningún problema, lo que justifica como válidas las aproximaciones anteriores.
     Sin embargo, en nuestro intento de reproducción sí jugarán un papel muy importante.
@@ -236,7 +236,7 @@ En particular, nos centramos en la reproducción de redes en Twitter.
 
 Estando en esta situación, decidimos que la mejor manera de sobreponernos era obtener nuestra propia fuente de datos, de una de nuestras redes (más pequeña que la usada en el estudio) de Twitter.
 
-    Para ello usamos el paquete \textit{Tweepy}, el cual nos ofrece la posibilidad de conectarnos a la API de twitter para la obtención de nuestro grafo de seguidores.
+    Para ello usamos el paquete \textit{Tweepy}, el cual nos ofrece la posibilidad de conectarnos a la API de Twitter para la obtención de nuestro grafo de seguidores.
     Hemos de destacar que las restricciones de petición de usuarios a la aplicación hicieron que nos retrasásemos, pues nuestro dataset tardó días en estar completo.
     Éste se generó partiendo de la red de seguidores/seguidos de uno de los miembros del grupo y ampliándola con las redes de 50 de sus seguidores, elegidos aleatoriamente.
     Con este proceso, obtuvimos un grafo dirigido con 40375 nodos y 41480 aristas.
@@ -257,7 +257,7 @@ Estando en esta situación, decidimos que la mejor manera de sobreponernos era o
     feedback_cycle_list_DG1 = (list(simple_cycles(DG1)))
 \end{lstlisting}
 
-    Una vez obtenida la información sobre la ditribución de nodos en nuestra red, pasamos a repetir el análisis del artículo 
+    Una vez obtenida la información sobre la distribución de nodos en nuestra red, pasamos a repetir el análisis del artículo 
 
     Como extra, puede consultar el código de nuestro workflow en el apéndice.
 
@@ -267,19 +267,19 @@ Estando en esta situación, decidimos que la mejor manera de sobreponernos era o
 \begin{figure}
     \centering
     \includegraphics[width=0.5\paperwidth]{F_sevaseviene.png}
-    \caption{Fracción de los ciclos estructurales en nuestra red de Twitter que también son retroalimentados, $F(k)$, frente a su orden (cículos azules). También se muestra los valores $F(k)$ correspondientes para red aleatorizada (círculos naranjas). Junto a a estos datos se muestra la predicción del modelo $F(k, \gamma)$ para la $\gamma$ que mejor ajusta a los datos por mínimos cuadrados, $\gamma_{LS}$ (cruces verdes), y la correspondiente a la del artículo $\gamma_{article}$ (equis moradas). También se muestran las predicciones asintóticas del modelo para estas dos $\gamma$ (línea roja y línea marrón, respectivamente).}
+    \caption{Fracción de los ciclos estructurales en nuestra red de Twitter que también son retroalimentados, $F(k)$, frente a su orden (círculos azules). También se muestra los valores $F(k)$ correspondientes para red aleatorizada (círculos naranjas). Junto a a estos datos se muestra la predicción del modelo $F(k, \gamma)$ para la $\gamma$ que mejor ajusta a los datos por mínimos cuadrados, $\gamma_{LS}$ (cruces verdes), y la correspondiente a la del artículo $\gamma_{article}$ (equis moradas). También se muestran las predicciones asintóticas del modelo para estas dos $\gamma$ (línea roja y línea marrón, respectivamente).}
     \label{fig:sevaseviene_F}
 \end{figure}
 
     Los resultados obtenidos según el proceso anterior se muestran en la figura~\ref{fig:sevaseviene_F}.
     En ésta se muestran los valores experimentales obtenidos de $F(k)$ para nuestra red de Twitter. 
     Podemos ver que, al igual que en el artículo, nuestra red presenta una $F(k)$ mayor al caso aleatorizado, en contraste con lo que ocurre en redes ecológicas y biológicas. 
-    El valor de $F(k)$ para la aleatorización corresponde al método DR y es el resultado de promediar sobre 1000 aleatoriazaciones.
+    El valor de $F(k)$ para la aleatorización corresponde al método DR y es el resultado de promediar sobre 1000 aleatorizaciones.
 
     Sin embargo, al contrario que en el artículo, ajustando $\gamma$ al modelo mediante mínimos cuadrados obtenemos $\gamma_{LS} \simeq 0.50$, que coincide muy mal con los datos.
     Esto implica que la distribución de ciclos de nuestra red no puede ser explicada mediante el modelo propuesto.
 
-    Comparando con los resultados con el $\gamma$ obtenido en el artículo, $\gamma_{\textrm{article}} = 0.967$, vemos que tampoco hay un buen ajuste, aunque la pendente para ordenes mayores parece coincidir con la de nuestros datos.
+    Comparando con los resultados con el $\gamma$ obtenido en el artículo, $\gamma_{\textrm{article}} = 0.967$, vemos que tampoco hay un buen ajuste, aunque la pendiente para ordenes mayores parece coincidir con la de nuestros datos.
 
 \begin{figure}
     \centering
@@ -308,7 +308,7 @@ Estando en esta situación, decidimos que la mejor manera de sobreponernos era o
     En primer lugar, nos ha llamado la atención la gran necesidad de potencia computacional para resolver el problema. 
     Conceptos aparentemente sencillos como los de ciclos estructurales o dirigidos se convierten en problemas tremendamente costosos a nivel computacional, que hacen irrealizables el análisis de redes relativamente grandes.
 
-    Por otra parte hemos visto que la red de Twitter, desde un punto de vista local, no satisface el modelo propuesto del artículo. Sin embargo, la coincidencia de las pendientes en el gráfico de $F(k)$ parece indicar que la direccionalidad de la red también es observable desde esta perspectiva, sólo que requeriría de correciones para tener en cuenta la no independencia de los diferentes ciclos.
+    Por otra parte hemos visto que la red de Twitter, desde un punto de vista local, no satisface el modelo propuesto del artículo. Sin embargo, la coincidencia de las pendientes en el gráfico de $F(k)$ parece indicar que la direccionalidad de la red también es observable desde esta perspectiva, sólo que requeriría de correcciones para tener en cuenta la no independencia de los diferentes ciclos.
 
     Finalmente, una dirección interesante en la que avanzar sería el estudio de la red de Twitter analizando de forma conjunta tanto su carácter direccional como la asortatividad en las conexiones recíprocas.
 
