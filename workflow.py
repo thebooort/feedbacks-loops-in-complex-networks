@@ -6,11 +6,6 @@ from collections import defaultdict
 from lib import *
 import csv
 
-"""
-OJITO definitiva contiene un sample mucho mas grande de una red de twitter
-mi ordenador no tira no con ella, por eso esta comentada
-
-"""
 
 # Load data
 # ========================================
