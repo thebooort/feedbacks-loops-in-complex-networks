@@ -194,7 +194,7 @@ def csv2dict(filename, delimiter=";"):
 def F(k,gamma):
     """
     Equation that give the theoretical approximation of the fraction loops thata
-    are feddback loops
+    are feedback loops
     k= loop length
     gamma= parameter
     
@@ -228,11 +228,9 @@ cyclic_eulerian_novec.cache = {(0, 1) : 1}
 cyclic_eulerian = np.vectorize(cyclic_eulerian_novec)
 
 def F_exact_novec(k, gamma):
-    """Calculate exact value of the fraction of feedback loops.
+    """Calculate the exact value of the fraction of feedback loops.
 
     Note: this function is not vectorized.
-
-    The model described in the article is used.
 
     """
     suma = 0
