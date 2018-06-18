@@ -41,7 +41,7 @@ def fib(n,user,spamwriter):
         #for 15 minutes. This parameter can be tweeked 
         time.sleep(40) 
         
-        #This is for private users that we wont be able to see their followers
+        #This is for private users whose followers we won't be able to see
         try:
             users=tweepy.Cursor(api.followers, screen_name = user, wait_on_rate_limit = True).items()
             for follower in users:
