@@ -5,7 +5,7 @@ from collections import defaultdict
 
 # Define functions
 # ========================================
-""" This functions has been modified from the function simple_cycles
+""" These functions have been modified from the function simple_cycles
     in networkx package, which is distributed under a BSD license.
         networkx github page: https://github.com/networkx/
 
@@ -193,7 +193,7 @@ def csv2dict(filename, delimiter=";"):
 
 def F(k,gamma):
     """
-    Equation that give the theoretical approximation of the fraction loops thata
+    Equation that gives the theoretical approximation of the fraction loops thata
     are feedback loops
     k= loop length
     gamma= parameter
@@ -204,10 +204,10 @@ def F(k,gamma):
 
 
 def cyclic_eulerian_novec(l, k):
-    """Calculate the cyclic Eulerian number of order k for l ascents.
+    """Calculates the cyclic Eulerian number of order k for l ascents.
 
     """
-    # Check if the result have been memoized
+    # Checks if the result have been memorized
     if (l, k) in cyclic_eulerian_novec.cache:
         result = cyclic_eulerian_novec.cache[(l, k)]
     # Else, calculate it
@@ -228,7 +228,7 @@ cyclic_eulerian_novec.cache = {(0, 1) : 1}
 cyclic_eulerian = np.vectorize(cyclic_eulerian_novec)
 
 def F_exact_novec(k, gamma):
-    """Calculate the exact value of the fraction of feedback loops.
+    """Calculates the exact value of the fraction of feedback loops.
 
     Note: this function is not vectorized.
 
